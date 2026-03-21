@@ -3,13 +3,13 @@
 // ============================
 
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Home, CheckSquare, BarChart2, Trophy, User } from 'lucide-react';
+import { Home, CheckSquare, Target, BookOpen, User } from 'lucide-react';
 
 const ONGLETS = [
   { chemin: '/dashboard', icone: Home, label: 'Accueil' },
   { chemin: '/habitudes', icone: CheckSquare, label: 'Habitudes' },
-  { chemin: '/stats', icone: BarChart2, label: 'Stats' },
-  { chemin: '/classement', icone: Trophy, label: 'Classement' },
+  { chemin: '/objectifs', icone: Target, label: 'Objectifs' },
+  { chemin: '/journal', icone: BookOpen, label: 'Journal' },
   { chemin: '/profil', icone: User, label: 'Profil' },
 ];
 
@@ -46,29 +46,19 @@ export default function BarreNavigation() {
             >
               <div
                 className="relative"
-                style={{
-                  filter: actif ? 'drop-shadow(0 0 8px rgba(16, 185, 129, 0.6))' : 'none',
-                }}
+                style={{ filter: actif ? 'drop-shadow(0 0 8px rgba(16, 185, 129, 0.6))' : 'none' }}
               >
                 <Icone size={22} strokeWidth={actif ? 2.5 : 1.8} />
                 {actif && (
                   <div
                     className="absolute -bottom-1 left-1/2 -translate-x-1/2 rounded-full"
-                    style={{
-                      width: '4px',
-                      height: '4px',
-                      background: '#10B981',
-                      boxShadow: '0 0 6px #10B981',
-                    }}
+                    style={{ width: '4px', height: '4px', background: '#10B981', boxShadow: '0 0 6px #10B981' }}
                   />
                 )}
               </div>
               <span
                 className="text-xs font-medium truncate"
-                style={{
-                  fontFamily: 'DM Sans, sans-serif',
-                  fontSize: '10px',
-                }}
+                style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '10px' }}
               >
                 {label}
               </span>

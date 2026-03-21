@@ -12,8 +12,9 @@ import Habitudes from './screens/Habitudes';
 import Stats from './screens/Stats';
 import Classement from './screens/Classement';
 import Profil from './screens/Profil';
+import Journal from './screens/Journal';
+import Objectifs from './screens/Objectifs';
 
-// Composant interne qui accède au contexte
 function ContenuApp() {
   const { donnees, chargement } = useApp();
 
@@ -31,7 +32,6 @@ function ContenuApp() {
     );
   }
 
-  // Onboarding si pas encore terminé
   if (!donnees?.onboardingTermine) {
     return <Onboarding />;
   }
@@ -42,6 +42,8 @@ function ContenuApp() {
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/habitudes" element={<Habitudes />} />
+        <Route path="/objectifs" element={<Objectifs />} />
+        <Route path="/journal" element={<Journal />} />
         <Route path="/stats" element={<Stats />} />
         <Route path="/classement" element={<Classement />} />
         <Route path="/profil" element={<Profil />} />
